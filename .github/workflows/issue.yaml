@@ -1,5 +1,6 @@
 name: issue-workflow
 on:
+  # 일부 이벤트는 default branch에서만 트리거 된다.
   issues:
     types: [opened]
 
