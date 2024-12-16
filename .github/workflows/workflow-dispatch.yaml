@@ -32,6 +32,6 @@ jobs:
       - name: echo inputs
         run: |
           echo ${{ inputs.name }}
-          echo ${{ inputs.evironment }}
+          echo ${{ inputs.environment }}
           
           
