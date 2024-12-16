@@ -1,5 +1,10 @@
 name: pull-request-workflow
-on: pull_request
+# pull request에 정의된 default activity types 적용되어
+# PR에 커밋을 또 추가할 때 github action이 실행된다.
+# types에 지정해주면 PR이 opened 상태일 때만 실행된다.
+on:
+  pull_request:
+    types: [opened]
 
 jobs:
   push-job:
