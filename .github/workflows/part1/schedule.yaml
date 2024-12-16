@@ -1,0 +1,13 @@
+name: schedule-workflow
+on:
+  # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#schedule
+  # 5분 간격, 30분 간격의 작업은 드랍될 가능성 있음
+  schedule:
+    - cron: '15 * * * *'
+
+jobs:
+  schedule-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: schedule test
+        run: echo hello world
