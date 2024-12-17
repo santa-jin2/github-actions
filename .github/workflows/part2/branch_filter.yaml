@@ -1,6 +1,7 @@
 name: branch-filter
 on:
   push:
+    # dev 브랜치에 push 될 때만
     branches: ["dev"]
 
 jobs:

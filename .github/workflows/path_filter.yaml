@@ -1,0 +1,16 @@
+name: path-filter
+on:
+  push:
+    paths:
+      # 아래 디렉토리에 변경사항이 일어나면 trigger
+      - '.github/workflows/part1/*'
+      # !: 제외하다
+      # push.yaml 파일의 변경사항을 trigger에서 제외
+      - '!.github/workflows/part1/push.yaml'
+
+jobs:
+  path-filter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo good
+        run: echo good
