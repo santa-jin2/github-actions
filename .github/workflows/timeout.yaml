@@ -4,6 +4,7 @@ on: push
 jobs:
   timeout:
     runs-on: ubuntu-latest
+    # 2분 이상 실행되면 종료
     timeout-minutes: 2
     steps:
       - name: loop
@@ -14,5 +15,6 @@ jobs:
             count=$((count+1))
             sleep 1
           done
+        timeout-minutes: 1
       - name: echo
         run: echo hello
