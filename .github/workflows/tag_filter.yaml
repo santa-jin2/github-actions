@@ -1,0 +1,14 @@
+name: tag-filter
+on:
+  push:
+    tags:
+      # success: v1.0.0 or v2.2.2
+      # fail: v1.0 or 1.0.0
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  tag-filter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo tag hi
+        run: echo tag hi
