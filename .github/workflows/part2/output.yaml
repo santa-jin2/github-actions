@@ -12,8 +12,9 @@ jobs:
         run: |
           echo "test=hello" >> $GITHUB_OUTPUT
       - name: check output
+        # hello 출력
         run: |
-          echo ${{ steps.check-output.outputs.test }}
+          echo ${{ steps.check-output.outputs.test }} 
 
   get-output:
     # create-output이 실행된 후
@@ -21,4 +22,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: get output
+        # hello 출력
         run: echo ${{ needs.create-output.outputs.test }}

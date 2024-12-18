@@ -1,0 +1,40 @@
+name: var-1
+on: push
+
+# 워크플로우 레벨에서 환경변수 구성
+env:
+  level: workflow
+
+jobs:
+  get-env-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check env
+        run: echo "LEVEL ${{ env.level }} # workflow
+
+  get-env-2:
+    runs-on: ubuntu-latest
+    env:
+      level: job
+    steps:
+      - name: check env
+        run: echo "LEVEL ${{ env.level }} # job
+
+  get-env-3:
+    runs-on: ubuntu-latest
+    env:
+      level: job
+    steps:
+      - name: check env
+        run: echo "LEVEL ${{ env.level }} # step
+        env:
+          level: step
+
+  get-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create env
+        run: echo "level=job" >> $GITHUB_ENV
+      - name: check env
+        run: echo "LEVEL ${{ env.level }}"
+
