@@ -4,6 +4,9 @@ on: push
 jobs:
   get-matrix:
     strategy:
+      # 4개의 job이 실행된다.
+      # windows-latest 12, windows-latest 14
+      # ubuntu-latest 12, ubuntu-latest 14
       matrix:
         os: [windows-latest, ubuntu-latest]
         version: [12, 14]
